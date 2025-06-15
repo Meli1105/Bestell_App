@@ -12,6 +12,8 @@
     />
 
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,5 +22,97 @@
       rel="stylesheet"
     />
   </head>
-  <body></body>
+  <body>
+    <div class="full_screen">
+      <header>
+        <div class="logo_area">
+          <img
+            class="logo_img"
+            src="./assets/icons/android-chrome-512x512.png"
+          />
+          <img class="logo_img" src="./assets/icons/Bestell App- Logo.svg" />
+        </div>
+      </header>
+
+      <main class="content_wrapper">
+        <section class="content">
+          <img class="headline_img" src="./assets/img/tapas.jpg" />
+          <div class="headline">
+            <h1>Tapas Paradise</h1>
+            <h3>Review (3/5 stars)</h3>
+          </div>
+          <div class="menu_bar">
+            <span class="menu_item">
+              <img class="arrow" src="./assets/icons/right-arrow.png" />
+              <a class="menu_text">Starters</a>
+            </span>
+            <span class="menu_item">
+              <img class="arrow" src="./assets/icons/right-arrow.png" />
+              <a class="menu_text">Main Course</a>
+            </span>
+          </div>
+          <img class="menu_img" src="./assets/img/bruschetta.jpg" />
+          <div class="headline">
+            <h2>Starters</h2>
+          </div>
+          <div class="dish">
+            <span class="dish_header">
+              <h3 class="dish_title">Bruschetta with Burrato</h3>
+              <div class="add_button">+</div>
+            </span>
+            <a>Crispy baguette with tomatoes, burrato and citron</a>
+            <a class="price">8,90</a>
+          </div>
+          <div class="dish">
+            <span class="dish_header">
+              <h3 class="dish_title">Parma Rolls</h3>
+              <div class="add_button">+</div>
+            </span>
+            <a>Parma with cream cheese and ruccola</a>
+            <a class="price">10,90</a>
+          </div>
+        </section>
+        <section class="basket_wrapper">
+          <div class="basket">
+            <h2 class="cart_header">Shopping Cart</h2>
+            <div class="divider"></div>
+            <div class="order_list">
+              <div class="order_item">
+                <h3 class="dish_name">Bruschetta with Burrato</h3>
+                <div class="dish_count">
+                  <div class="minus">-</div>
+                  <a class="amount">11x</a>
+                  <div class="plus">+</div>
+                  <a class="dish_price">55,5 €</a>
+                  <img class="trash" src="./assets/icons/disposal.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Image by
+        <a
+          href="https://pixabay.com/users/deeznutz1-3086161/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8904839"
+          >Dee</a
+        >
+        from
+        <a
+          href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8904839"
+          >Pixabay</a
+        >
+        <a href="https://www.flaticon.com/free-icons/next" title="next icons"
+          >Next icons created by Pixel perfect - Flaticon</a
+        >
+
+        <a
+          href="https://www.flaticon.com/free-icons/eliminate"
+          title="eliminate icons"
+          >Eliminate icons created by Uniconlabs - Flaticon</a
+        >
+      </footer>
+    </div>
+  </body>
 </html>
