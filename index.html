@@ -72,20 +72,59 @@
             <a class="price">10,90</a>
           </div>
         </section>
+
         <section class="basket_wrapper">
           <div class="basket">
             <h2 class="cart_header">Shopping Cart</h2>
             <div class="divider"></div>
             <div class="order_list">
               <div class="order_item">
-                <h3 class="dish_name">Bruschetta with Burrato</h3>
-                <div class="dish_count">
-                  <div class="minus">-</div>
-                  <a class="amount">11x</a>
-                  <div class="plus">+</div>
-                  <a class="dish_price">55,5 €</a>
-                  <img class="trash" src="./assets/icons/disposal.png" />
-                </div>
+                <table>
+                  <th class="table_dish" colspan="6">
+                    Bruschetta with Burrato
+                  </th>
+                  <tr>
+                    <td class="operator">-</td>
+                    <td class="amount" data-original="1">11</td>
+                    <td class="padding_r_16">x</td>
+                    <td class="operator">+</td>
+                    <td class="amount">55,5</td>
+                    <td class="padding_r_16">€</td>
+                    <td class="trash_column">
+                      <img class="trash" src="./assets/icons/disposal.png" />
+                    </td>
+                  </tr>
+                  <th class="table_dish" colspan="6">Parma Rolls</th>
+                  <tr>
+                    <td class="operator">-</td>
+                    <td class="amount" data-original="1">5</td>
+                    <td class="padding_r_16">x</td>
+                    <td class="operator">+</td>
+                    <td class="amount">55,5</td>
+                    <td class="padding_r_16">€</td>
+                    <td class="trash_column">
+                      <img class="trash" src="./assets/icons/disposal.png" />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="divider"></div>
+              <div class="calculation">
+                <table>
+                  <tr>
+                    <td class="padding_tb_4">Subtotal</td>
+                    <td class="amount padding_tb_4">345,67</td>
+                    <td class="padding_tb_4 width_5">€</td>
+                  </tr>
+                  <tr>
+                    <td class="padding_tb_4">Delivery Costs</td>
+                    <td class="amount padding_tb_4">5,50</td>
+                    <td class="padding_tb_4 width_5">€</td>
+                  </tr>
+                  <th class="padding_tb_4 total_sum">Total Sum</th>
+                  <th class="amount padding_tb_4">555,55</th>
+                  <th class="padding_tb_4 width_5">€</th>
+                </table>
               </div>
             </div>
           </div>

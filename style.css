@@ -1,0 +1,82 @@
+.logo_area {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  height: 10vh;
+}
+
+.full_screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.full_screen main {
+  flex: 1;
+}
+
+.logo_img {
+  width: 100%;
+}
+
+.headline_img {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.content {
+  width: calc(100% - 412px);
+}
+
+.basket_wrapper {
+  width: 400px;
+  border-left: 2px solid;
+  border-color: rgba(255, 128, 0, 0.678);
+  box-sizing: border-box;
+  box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.basket {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.menu_bar {
+  padding-left: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+  width: calc(100% - 32px);
+  height: 4vh;
+  display: flex;
+  gap: 64px;
+  background-color: rgba(255, 128, 0, 0.26);
+}
+
+.cart_header {
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.divider {
+  border-top: 2px solid;
+  border-color: rgba(255, 128, 0, 0.342);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.order_list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+}
