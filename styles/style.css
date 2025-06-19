@@ -58,7 +58,7 @@
   width: calc(100% - 32px);
   height: 4vh;
   display: flex;
-  gap: 64px;
+  gap: 34px;
   background-color: rgba(255, 128, 0, 0.26);
 }
 
