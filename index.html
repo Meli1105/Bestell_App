@@ -21,6 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+
+    <script src="./scripts/dishes.js"></script>
   </head>
   <body>
     <div class="full_screen">
@@ -44,33 +46,74 @@
           <div class="menu_bar">
             <span class="menu_item">
               <img class="arrow" src="./assets/icons/right-arrow.png" />
-              <a class="menu_text">Starters</a>
+              <a class="menu_text" href="#starters">Starters</a>
             </span>
             <span class="menu_item">
               <img class="arrow" src="./assets/icons/right-arrow.png" />
-              <a class="menu_text">Main Course</a>
+              <a class="menu_text" href="#main_courses">Main Course</a>
+            </span>
+            <span class="menu_item">
+              <img class="arrow" src="./assets/icons/right-arrow.png" />
+              <a class="menu_text" href="#desserts">Desserts</a>
             </span>
           </div>
           <img class="menu_img" src="./assets/img/bruschetta.jpg" />
           <div class="headline">
             <h2>Starters</h2>
           </div>
-          <div class="dish">
-            <span class="dish_header">
-              <h3 class="dish_title">Bruschetta with Burrato</h3>
-              <div class="add_button">+</div>
-            </span>
-            <a>Crispy baguette with tomatoes, burrato and citron</a>
-            <a class="price">8,90</a>
+          <div id="starters">
+            <div class="dish">
+              <span class="dish_header">
+                <h3 class="dish_title">Bruschetta with Burrato</h3>
+                <div class="add_button">+</div>
+              </span>
+              <a>Crispy baguette with tomatoes, burrato and citron</a>
+              <a class="price">8,90</a>
+            </div>
+            <div class="dish">
+              <span class="dish_header">
+                <h3 class="dish_title">Parma Rolls</h3>
+                <div class="add_button">+</div>
+              </span>
+              <a>Parma with cream cheese and ruccola</a>
+              <a class="price">10,90</a>
+            </div>
           </div>
-          <div class="dish">
-            <span class="dish_header">
-              <h3 class="dish_title">Parma Rolls</h3>
-              <div class="add_button">+</div>
-            </span>
-            <a>Parma with cream cheese and ruccola</a>
-            <a class="price">10,90</a>
+
+          <img class="menu_img" src="./assets/img/spaghetti-1392266_1920.jpg" />
+          <div class="headline">
+            <h2>Main Courses</h2>
           </div>
+          <div id="main_courses">
+            <div class="dish">
+              <span class="dish_header">
+                <h3 class="dish_title">Spaghetti Pomodoro</h3>
+                <div class="add_button">+</div>
+              </span>
+              <a>Classic spaghetti with a rich tomato sauce and fresh basil.</a>
+              <a class="price">12,90</a>
+            </div>
+            <div class="dish">
+              <span class="dish_header">
+                <h3 class="dish_title">Gambas al Ajillo</h3>
+                <div class="add_button">+</div>
+              </span>
+              <a>Sizzling shrimp cooked in garlic and olive oil, served with crusty bread.</a>
+              <a class="price">13,50</a>
+            </div>
+          </div>
+          
+          <img
+            class="menu_img"
+            src="./assets/img/creme-brulee-3490882_1920.jpg"
+          />
+          <div class="headline">
+            <h2>Desserts</h2>
+          </div>
+
+          <div id="desserts">
+          </div>
+
         </section>
 
         <section class="basket_wrapper">
@@ -150,6 +193,16 @@
           href="https://www.flaticon.com/free-icons/eliminate"
           title="eliminate icons"
           >Eliminate icons created by Uniconlabs - Flaticon</a
+        >
+        Image by
+        <a
+          href="https://pixabay.com/users/ritae-19628/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1392266"
+          >-Rita-👩‍🍳 und 📷 mit ❤</a
+        >
+        from
+        <a
+          href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1392266"
+          >Pixabay</a
         >
       </footer>
     </div>
