@@ -101,6 +101,12 @@ function getBasketLayout() {
                   <th class="padding_tb_4 width_5">€</th>
                 </table>
               </div>
+              <div class="divider"></div>
+              <div class="button_row">
+                <div class="button" onclick="confirmOrder()">Confirm Order</div>
+                <div class="button" onclick="deleteOrder()">Delete Shopping Cart</div>
+              </div>
+
             </div>
           </div>
 
@@ -114,10 +120,10 @@ function getOrderItemTemplate(indexOrder) {
             ${orderList.dishes[indexOrder]}
         </th>
         <tr>
-            <td class="operator" onclick="decreaseAmount(${indexOrder})">-</td>
+            <td class="operator" id="minus${indexOrder}" onclick="decreaseAmount(${indexOrder})">-</td>
             <td class="amount" data-original="1">${orderList.amounts[indexOrder]}</td>
             <td class="padding_r_16">x</td>
-            <td class="operator" onclick="increaseAmount(${indexOrder})">+</td>
+            <td class="operator" id="plus${indexOrder}" onclick="increaseAmount(${indexOrder})">+</td>
             <td class="amount">${orderList.calcPrice[indexOrder].toFixed(2)}</td>
             <td class="padding_r_16">€</td>
             <td class="trash_column">

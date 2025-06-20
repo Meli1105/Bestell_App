@@ -17,20 +17,27 @@ function addToBasket(indexDishes, category) {
   }
   calcOrder();
   renderBasketOrder();
+  saveToLocalStorage();
 }
 
 function decreaseAmount(indexOrder) {
-  orderList.amounts[indexOrder] -= 1;
-  orderList.calcPrice[indexOrder] -= orderList.prices[indexOrder];
+  if (orderList.amounts[indexOrder] > 1) {
+    orderList.amounts[indexOrder] -= 1;
+    orderList.calcPrice[indexOrder] -= orderList.prices[indexOrder];
+  }
   calcOrder();
   renderBasketOrder();
+  saveToLocalStorage();
 }
 
 function increaseAmount(indexOrder) {
+    if (orderList.amounts[indexOrder] < 20) { // limit to a maximum of 20
   orderList.amounts[indexOrder] += 1;
   orderList.calcPrice[indexOrder] += orderList.prices[indexOrder];
+  }
   calcOrder();
   renderBasketOrder();
+  saveToLocalStorage();
 }
 
 function removeFromBasket(indexOrder) {
@@ -46,6 +53,7 @@ function removeFromBasket(indexOrder) {
     calcOrder();
     renderBasketOrder();
   }
+  saveToLocalStorage();
 }
 
 function calcOrder() {
