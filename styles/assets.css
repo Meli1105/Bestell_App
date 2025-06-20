@@ -149,11 +149,6 @@
   transform: scale(1.25);
 }
 
-.calculation {
-  padding-top: 12px;
-  padding-left: 8px;
-}
-
 .padding_tb_4 {
   padding-top: 4px;
   padding-bottom: 4px;
@@ -165,4 +160,25 @@
 
 .total_sum {
   text-align: left;
+}
+
+.button {
+  display: flex;
+  width: 45%;
+  height: auto;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: rgba(255, 128, 0, 0.26);
+  border: 1px solid rgba(255, 128, 0);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 128, 0, 0.678);
+  color: white;
 }
