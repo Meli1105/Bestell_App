@@ -88,16 +88,16 @@ function getBasketLayout() {
                 <table>
                   <tr>
                     <td class="padding_tb_4">Subtotal</td>
-                    <td class="amount padding_tb_4"></td>
+                    <td class="amount padding_tb_4" id="subtotal">0.00</td>
                     <td class="padding_tb_4 width_5">€</td>
                   </tr>
                   <tr>
                     <td class="padding_tb_4">Delivery Costs</td>
-                    <td class="amount padding_tb_4"></td>
+                    <td class="amount padding_tb_4" id="delivery">0.00</td>
                     <td class="padding_tb_4 width_5">€</td>
                   </tr>
                   <th class="padding_tb_4 total_sum">Total Sum</th>
-                  <th class="amount padding_tb_4"></th>
+                  <th class="amount padding_tb_4" id="total">0.00</th>
                   <th class="padding_tb_4 width_5">€</th>
                 </table>
               </div>
@@ -114,14 +114,14 @@ function getOrderItemTemplate(indexOrder) {
             ${orderList.dishes[indexOrder]}
         </th>
         <tr>
-            <td class="operator">-</td>
+            <td class="operator" onclick="decreaseAmount(${indexOrder})">-</td>
             <td class="amount" data-original="1">${orderList.amounts[indexOrder]}</td>
             <td class="padding_r_16">x</td>
-            <td class="operator">+</td>
-            <td class="amount">${orderList.prices[indexOrder]}</td>
+            <td class="operator" onclick="increaseAmount(${indexOrder})">+</td>
+            <td class="amount">${orderList.calcPrice[indexOrder].toFixed(2)}</td>
             <td class="padding_r_16">€</td>
             <td class="trash_column">
-                <img class="trash" src="./assets/icons/disposal.png" />
+                <img class="trash" onclick="removeFromBasket(${indexOrder})" src="./assets/icons/disposal.png" />
             </td>
         </tr>
     </table>
