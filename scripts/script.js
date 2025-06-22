@@ -47,6 +47,10 @@ function renderMenu() {
   ) {
     dishesDesserts.innerHTML += getDessertTemplate(indexDessert);
   }
+
+  let buttonRef = document.getElementById("button_wrapper");
+  buttonRef.innerHTML = "";
+  buttonRef.innerHTML = getButtonUpTemplate();
 }
 
 function renderBasketLayout() {
@@ -65,6 +69,15 @@ function renderBasketOrder() {
 
   for (let indexOrder = 0; indexOrder < orderList.dishes.length; indexOrder++) {
     orderItemRef.innerHTML += getOrderItemTemplate(indexOrder);
+
+    let operatorMinus = document.getElementById(`minus${indexOrder}`);
+    let operatorPlus = document.getElementById(`plus${indexOrder}`);
+    if (orderList.amounts[indexOrder] === 1) {
+      operatorMinus.classList.add("hide");
+    }
+    if (orderList.amounts[indexOrder] === 20) {
+      operatorPlus.classList.add("hide");
+    }
   }
   orderSubtotalRef.innerHTML = `${subtotal.toFixed(2)}`;
   orderDeliveryRef.innerHTML = `${delivery.toFixed(2)}`;
@@ -111,7 +124,7 @@ function deleteOrder() {
   renderBasketLayout();
 }
 
-function toggleOverlay() {
+function toggleOverlay(index = null) {
   // Open/close overlay
   let overlay = document.getElementById("overlay");
   let orderConfRef = document.getElementById("orderConfirmation");
@@ -122,12 +135,15 @@ function toggleOverlay() {
   } else if (orderList.dishes.length === 0) {
     overlay.classList.add("show");
     orderConfRef.innerHTML = `<h3>Your cart is empty.<br>
-    Please add some dishes to your cart.</h3>`
+    Please add some dishes to your cart.</h3>`;
+  } else if (index !== null && orderList.amounts[index] === 20) {
+    overlay.classList.add("show");
+    orderConfRef.innerHTML = `<h3>Sorry, you can only order a maximum of 20 portions per dish.</h3>`;
   } else {
     overlay.classList.add("show");
     orderConfRef.innerHTML = `<h3>Thank you for your order! <br>
-    We will deliver your food as soon as possible.</h3>`
-}
+    We will deliver your food as soon as possible.</h3>`;
+  }
 }
 
 function confirmOrder() {
@@ -135,5 +151,6 @@ function confirmOrder() {
   deleteOrder();
 }
 
-//Function um +/- zu verbergen, wenn ueber/unter Limit
-//Scroll Up Button
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
