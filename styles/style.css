@@ -21,7 +21,7 @@
 
 .headline_img {
   height: 30vh;
-  width: 100%;
+  width: calc(100% + 48px);
   object-fit: cover;
 }
 
@@ -33,7 +33,31 @@
 }
 
 .content {
-  width: calc(100% - 412px);
+  width: calc(100% - 470px);
+}
+
+.button_wrapper {
+  width: 48px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.button_up {
+  width: 48px;
+  position: fixed;
+  bottom: 95px;
+  color: rgba(255, 128, 0);
+}
+
+.button_up:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.arrow_up {
+  width: 95%;
 }
 
 .basket_wrapper {
@@ -76,24 +100,24 @@
 }
 
 .order_list {
-    display: flex;
-    flex-direction: column;
-    padding-top: 12px;
-    padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .calculation {
   padding-top: 12px;
   padding-left: 8px;
-  padding-bottom: 12px
+  padding-bottom: 12px;
 }
 
 .button_row {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   padding-top: 24px;
   padding-left: 8px;
-  padding-right: 8px
+  padding-right: 8px;
 }
 
 .overlay {
@@ -133,4 +157,24 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.contribution {
+  width: 380px;;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 24px;
+  padding-top: 12px;
+}
+
+.contribution_box {
+  text-decoration: none;
+  color: rgba(53, 60, 64);
+}
+
+.footer_headlines {
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgba(53, 60, 64);
 }

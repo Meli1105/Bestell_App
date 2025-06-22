@@ -5,10 +5,15 @@ let total = 0;
 function addToBasket(indexDishes, category) {
   let orderedDish = dishes[0][category][indexDishes];
 
-  if (orderList.dishes.findIndex((dish) => dish === orderedDish.name) !== -1) {
+  if (
+    orderList.dishes.findIndex((dish) => dish === orderedDish.name) !== -1 &&
+    orderList.amounts[indexDishes] < 20
+  ) {
     orderList.amounts[orderList.dishes.indexOf(orderedDish.name)] += 1; // increase the amount
     orderList.calcPrice[orderList.dishes.indexOf(orderedDish.name)] +=
       orderedDish.price; // increase the price
+  } else if ((orderList.amounts[indexDishes] === 20)) {
+    toggleOverlay(indexDishes);
   } else {
     orderList.dishes.push(orderedDish.name);
     orderList.amounts.push(1);
@@ -31,9 +36,10 @@ function decreaseAmount(indexOrder) {
 }
 
 function increaseAmount(indexOrder) {
-    if (orderList.amounts[indexOrder] < 20) { // limit to a maximum of 20
-  orderList.amounts[indexOrder] += 1;
-  orderList.calcPrice[indexOrder] += orderList.prices[indexOrder];
+  if (orderList.amounts[indexOrder] < 20) {
+    // limit to a maximum of 20
+    orderList.amounts[indexOrder] += 1;
+    orderList.calcPrice[indexOrder] += orderList.prices[indexOrder];
   }
   calcOrder();
   renderBasketOrder();
