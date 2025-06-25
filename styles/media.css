@@ -1,0 +1,58 @@
+@media (min-height: 1100px) {
+  .dish {
+    height: 13.5vh;
+  }
+  .headline_img {
+    height: 20vh;
+  }
+  .menu_img {
+    height: 12vh;
+  }
+  .logo_area {
+    height: 8vh;
+  }
+  footer {
+    height: 80px;
+  }
+
+@media (max-width: 1060px) {
+  .menu_bar {
+    gap: 24px;
+  }
+  .menu_item {
+    height: 80%;
+    width: 180px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .headline {
+    margin-left: 24px;
+  }
+
+  .dish {
+    margin-left: 24px;
+  }
+  .menu_bar {
+    padding-left: 24px;
+  }
+
+  .content {
+    width: calc(100% - 420px);
+  }
+
+  .basket_wrapper {
+    width: 350px;
+  }
+}
+
+@media (max-width: 940px) {
+  .content {
+    width: calc(100% - 370px);
+  }
+
+  .basket_wrapper {
+    width: 300px;
+  }
+}

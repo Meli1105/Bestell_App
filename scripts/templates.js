@@ -58,7 +58,7 @@ function getStarterTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'starters')">+</div>
               </span>
-              <a>${dishes[0].starters[indexDishes].description}</a>
+              <a class="dish_text">${dishes[0].starters[indexDishes].description}</a>
               <a class="price">${dishes[0].starters[indexDishes].price.toFixed(
                 2
               )} €</a>
@@ -73,7 +73,7 @@ function getMainCourseTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'mainCourses')">+</div>
               </span>
-              <a>${dishes[0].mainCourses[indexDishes].description}</a>
+              <a class="dish_text">${dishes[0].mainCourses[indexDishes].description}</a>
               <a class="price">${dishes[0].mainCourses[
                 indexDishes
               ].price.toFixed(2)} €</a>
@@ -88,7 +88,7 @@ function getDessertTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'desserts')">+</div>
               </span>
-              <a>${dishes[0].desserts[indexDishes].description}</a>
+              <a class="dish_text">${dishes[0].desserts[indexDishes].description}</a>
               <a class="price">${dishes[0].desserts[indexDishes].price.toFixed(
                 2
               )} €</a>

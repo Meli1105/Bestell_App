@@ -60,6 +60,10 @@
   padding-top: 12px;
 }
 
+.dish_text {
+  padding-right: 12px;
+}
+
 .price {
   padding-top: 12px;
   color: rgba(255, 128, 0);
@@ -186,3 +190,4 @@
   background-color: rgba(255, 128, 0, 0.678);
   color: white;
 }
+
