@@ -6,9 +6,13 @@
 
 .menu_item {
   height: 100%;
-  width: 200px;
+  width: auto;
   display: flex;
   gap: 8px;
+  align-items: center;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
 }
 
 .arrow {
@@ -21,6 +25,15 @@
   font-size: 18px;
   color: rgb(53, 60, 64);
   text-decoration: none;
+}
+
+.arrow,
+.menu_text {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .menu_text:hover {
@@ -66,6 +79,7 @@
 
 .price {
   padding-top: 12px;
+  padding-bottom: 6px;
   color: rgba(255, 128, 0);
   font-weight: 700;
 }
@@ -190,4 +204,3 @@
   background-color: rgba(255, 128, 0, 0.678);
   color: white;
 }
-
