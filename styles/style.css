@@ -76,14 +76,18 @@
 
 .menu_bar {
   padding-left: 32px;
+  margin-right: 32px;
   padding-top: 4px;
   padding-bottom: 4px;
   margin-bottom: 24px;
   width: calc(100% - 32px);
   height: 4vh;
   display: flex;
-  gap: 34px;
+  gap: 8px 64px; /* top-bottom, left-right*/
   background-color: rgba(255, 128, 0, 0.26);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .cart_header {
@@ -160,7 +164,7 @@
 }
 
 .contribution {
-  width: 380px;;
+  width: 380px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
