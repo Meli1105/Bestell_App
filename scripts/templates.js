@@ -58,7 +58,9 @@ function getStarterTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'starters')">+</div>
               </span>
-              <a class="dish_text">${dishes[0].starters[indexDishes].description}</a>
+              <a class="dish_text">${
+                dishes[0].starters[indexDishes].description
+              }</a>
               <a class="price">${dishes[0].starters[indexDishes].price.toFixed(
                 2
               )} €</a>
@@ -73,7 +75,9 @@ function getMainCourseTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'mainCourses')">+</div>
               </span>
-              <a class="dish_text">${dishes[0].mainCourses[indexDishes].description}</a>
+              <a class="dish_text">${
+                dishes[0].mainCourses[indexDishes].description
+              }</a>
               <a class="price">${dishes[0].mainCourses[
                 indexDishes
               ].price.toFixed(2)} €</a>
@@ -88,7 +92,9 @@ function getDessertTemplate(indexDishes) {
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'desserts')">+</div>
               </span>
-              <a class="dish_text">${dishes[0].desserts[indexDishes].description}</a>
+              <a class="dish_text">${
+                dishes[0].desserts[indexDishes].description
+              }</a>
               <a class="price">${dishes[0].desserts[indexDishes].price.toFixed(
                 2
               )} €</a>
@@ -133,7 +139,35 @@ function getBasketLayout() {
 }
 
 function getOrderItemTemplate(indexOrder) {
-  return `
+  const isSmallScreen = window.innerWidth <= 600;
+
+  if (isSmallScreen) {
+    return `
+    <table>
+        <th class="table_dish" colspan="6">
+            ${orderList.dishes[indexOrder]}
+        </th>
+        <tr>
+            <td class="operator" id="minus${indexOrder}" onclick="decreaseAmount(${indexOrder})">-</td>
+            <td class="amount" data-original="1">${
+              orderList.amounts[indexOrder]
+            }</td>
+            <td class="padding_r_16">x</td>
+            <td class="operator" id="plus${indexOrder}" onclick="increaseAmount(${indexOrder})">+</td>
+        </tr>
+        <tr>
+            <td class="amount">${orderList.calcPrice[indexOrder].toFixed(
+              2
+            )}</td>
+            <td class="padding_r_16">€</td>
+            <td class="trash_column" colspan="2">
+                <img class="trash" onclick="removeFromBasket(${indexOrder})" src="./assets/icons/disposal.png" />
+            </td>
+        </tr>
+    </table>
+    `;
+  } else {
+    return `
     <table>
         <th class="table_dish" colspan="6">
             ${orderList.dishes[indexOrder]}
@@ -155,4 +189,5 @@ function getOrderItemTemplate(indexOrder) {
         </tr>
     </table>
     `;
+  }
 }

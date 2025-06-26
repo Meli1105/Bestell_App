@@ -14,6 +14,10 @@ function init() {
   }
 }
 
+window.addEventListener("resize", () => {
+  renderBasketOrder(); // or whatever function re-renders the basket
+});
+
 function renderMenu() {
   let contentRef = document.getElementById("content");
   contentRef.innerHTML = ""; // in case of a render function --> empty innerHTML before adding the content, otherwhise the content will be repeated over and over again
