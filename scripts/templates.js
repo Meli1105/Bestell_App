@@ -1,6 +1,6 @@
 function getMenuLayout() {
   return `
-        <img class="headline_img" src="./assets/img/tapas.jpg" />
+        <img class="headline_img" src="./assets/img/tapas.jpg" id="headline_img"/>
           <div class="headline">
             <h1>Tapas Paradise</h1>
             <h3>Review (3/5 stars)</h3>
