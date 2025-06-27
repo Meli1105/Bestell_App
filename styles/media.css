@@ -128,7 +128,7 @@
 
 @media (max-width: 600px) {
   .basket_wrapper {
-    display: none;
+    /* display: none; */
     width: 200px;
   }
   .content {
@@ -147,9 +147,6 @@
   .menu_bar {
     flex-wrap: nowrap;
     flex-direction: column;
-  }
-  .button_wrapper {
-    width: 32px;
   }
   .arrow_up {
     width: 70%;
@@ -186,5 +183,16 @@
   }
 }
 
-/* Warenkorb ausblenden bei responsivem Design
+@media (max-width: 420px) {
+  .logo_area {
+    height: 5vh;
+  }
+  .burger_menu {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+/* Tabelle kleiner ab 420
+bei ausgeklappter shoppingcart muss Menue noch angepasst werden
 */

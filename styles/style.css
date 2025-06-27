@@ -5,6 +5,36 @@
   height: 10vh;
 }
 
+.burger_menu {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger_icon {
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s;
+}
+
+.burger_icon.hover {
+  opacity: 0;
+}
+
+.burger_menu:hover .hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.burger_menu:hover .default {
+  opacity: 0;
+}
+
 .full_screen {
   min-height: 100vh;
   display: flex;
@@ -25,6 +55,10 @@
   object-fit: cover;
 }
 
+.full_width {
+  width: calc(100% + 71.5px);
+}
+
 .content_wrapper {
   display: flex;
   flex-direction: row;
@@ -36,12 +70,22 @@
   width: calc(100% - 470px);
 }
 
+.content_full_width {
+  width: calc(100% - 56px) !important;
+}
+
 .button_wrapper {
   width: 48px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-align: center;
+}
+
+.button_wrapper_width {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .button_up {
@@ -62,10 +106,17 @@
 
 .basket_wrapper {
   width: 400px;
+  height: 100vh;
+  overflow-y: scroll;
   border-left: 2px solid;
+  border-bottom: 2px solid;
   border-color: rgba(255, 128, 0, 0.678);
   box-sizing: border-box;
   box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.display_hide {
+  display: none;
 }
 
 .basket {
@@ -120,6 +171,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 24px;
+  padding-bottom: 24px;
   padding-left: 8px;
   padding-right: 8px;
 }

@@ -39,16 +39,24 @@
           />
           <img class="logo_img" src="./assets/icons/Bestell App- Logo.svg" />
         </div>
+        <div class="burger_menu" onclick="toggleShoppingCart()">
+          <img
+            class="burger_icon default"
+            src="./assets/icons/shopping-cart.png"
+          />
+          <img
+            class="burger_icon hover"
+            src="./assets/icons/shopping-cart_orange.png"
+          />
+          </div>
       </header>
 
       <main class="content_wrapper">
-        
-
         <section class="content" id="content"></section>
 
         <section class="button_wrapper" id="button_wrapper"></section>
 
-        <section class="basket_wrapper">
+        <section class="basket_wrapper" id="basket_wrapper">
           <div class="basket" id="basket"></div>
         </section>
       </main>
