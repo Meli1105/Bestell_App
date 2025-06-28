@@ -80,13 +80,13 @@
 
 @media (max-width: 710px) {
   .dish {
-    height: 20vh;
+    height: 21vh;
   }
 }
 
 @media (max-width: 671px) {
   .dish {
-    height: 21vh;
+    height: 22vh;
   }
   .menu_bar {
     height: 12vh;
@@ -128,7 +128,6 @@
 
 @media (max-width: 600px) {
   .basket_wrapper {
-    /* display: none; */
     width: 200px;
   }
   .content {
@@ -136,6 +135,9 @@
   }
   .trash_column {
     text-align: right;
+  }
+  .table_dish {
+    font-size: 16px;
   }
   .trash {
     height: 24px;
@@ -163,11 +165,17 @@
   .dish {
     height: 25vh;
   }
+  .table_dish {
+    padding-bottom: 6px;
+  }
+  td {
+    padding-bottom: 6px;
+  }
   .basket_wrapper {
-    width: 160px;
+    width: 150px;
   }
   .content {
-    width: calc(100% - 214px);
+    width: calc(100% - 204px);
   }
   .trash_column {
     text-align: right;
@@ -181,6 +189,12 @@
   .button {
     width: 75%;
   }
+  .button_wrapper {
+    width: 36px;
+  }
+  .button_up {
+    width: 36px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -188,11 +202,32 @@
     height: 5vh;
   }
   .burger_menu {
-    height: 32px;
-    width: 32px;
+    height: 26px;
+    width: 26px;
+  }
+  .burger_icon {
+    height: 26px;
+    width: 26px;
+  }
+  .headline {
+    margin-left: 14px;
+  }
+  .menu_bar {
+    padding-left: 14px;
+    width: calc(100% - 26px);
+  }
+  .menu_item {
+    height: 25%;
+  }
+  .menu_text {
+    font-size: 16px;
+  }
+  .dish {
+    margin-left: 14px;
   }
 }
 
 /* Tabelle kleiner ab 420
 bei ausgeklappter shoppingcart muss Menue noch angepasst werden
+Auf kleinem Schirm schliesst sich die Shopping cart beim scrollen
 */
