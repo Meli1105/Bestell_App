@@ -16,14 +16,9 @@
   }
 }
 
-@media (max-width: 1060px) {
-  .menu_bar {
-    gap: 8px 24px;
-    padding-top: 12px;
-  }
-  .menu_item {
-    height: 80%;
-    gap: 8px;
+@media (max-width: 1120px) {
+  .dish {
+    height: 18vh;
   }
 }
 
@@ -34,26 +29,24 @@
 
   .dish {
     margin-left: 24px;
+    height: 19vh;
   }
   .menu_bar {
     padding-left: 24px;
+    gap: 8px 24px;
+    padding-top: 12px;
     width: calc(100% - 24px);
   }
-
-  .content {
-    width: calc(100% - 420px);
-  }
-
-  .basket_wrapper {
-    width: 350px;
+  .menu_item {
+    height: 80%;
+    gap: 8px;
   }
 }
 
 @media (max-width: 940px) {
   .content {
-    width: calc(100% - 370px);
+    width: calc(100% - 318px);
   }
-
   .basket_wrapper {
     width: 300px;
   }
@@ -78,15 +71,9 @@
   }
 }
 
-@media (max-width: 710px) {
-  .dish {
-    height: 21vh;
-  }
-}
-
 @media (max-width: 671px) {
   .dish {
-    height: 22vh;
+    height: 21vh;
   }
   .menu_bar {
     height: 12vh;
@@ -131,7 +118,7 @@
     width: 200px;
   }
   .content {
-    width: calc(100% - 254px);
+    width: calc(100% - 218px);
   }
   .trash_column {
     text-align: right;
@@ -153,6 +140,9 @@
   .arrow_up {
     width: 70%;
   }
+  .full_width {
+    width: calc(100% - 74px);
+  }
 }
 
 @media (max-width: 540px) {
@@ -162,9 +152,6 @@
 }
 
 @media (max-width: 480px) {
-  .dish {
-    height: 25vh;
-  }
   .table_dish {
     padding-bottom: 6px;
   }
@@ -175,7 +162,7 @@
     width: 150px;
   }
   .content {
-    width: calc(100% - 204px);
+    width: calc(100% - 168px);
   }
   .trash_column {
     text-align: right;
@@ -194,6 +181,12 @@
   }
   .button_up {
     width: 36px;
+  }
+  .full_width {
+    width: calc(100% - 60px);
+  }
+  .full_width_img {
+    width: calc(100% + 60px);
   }
 }
 
@@ -224,6 +217,7 @@
   }
   .dish {
     margin-left: 14px;
+    height: 24vh;
   }
 }
 

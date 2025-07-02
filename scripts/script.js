@@ -13,6 +13,7 @@ function init() {
     calcOrder();
   }
   responsiveDesignAutomatic();
+  responsiveDishText();
 }
 
 function renderMenu() {
@@ -59,6 +60,8 @@ function renderBasketLayout() {
   basketRef.innerHTML = "";
 
   basketRef.innerHTML = getBasketLayout();
+
+  responsiveDishText();
 }
 
 function renderBasketOrder() {
@@ -160,44 +163,62 @@ function toggleShoppingCart() {
   let shoppingCart = document.getElementById("basket_wrapper");
   shoppingCart.classList.toggle("display_hide");
   toggleContentWidth();
+  responsiveDishText();
 }
 
 function toggleContentWidth() {
   let content = document.getElementById("content");
   let headlineImg = document.getElementById("headline_img");
 
-  content.classList.toggle("content_full_width");
-  headlineImg.classList.toggle("full_width");
-  toggleButtonWrapperWidth();
-}
-
-function toggleButtonWrapperWidth() {
-  let buttonWrapper = document.getElementById("button_wrapper");
-  buttonWrapper.classList.toggle("button_wrapper_width");
+  content.classList.toggle("full_width");
+  headlineImg.classList.toggle("full_width_img");
 }
 
 function responsiveDesignAutomatic() {
-  const isSmallScreen = window.innerWidth <= 600;
+  const isSmallScreen = window.innerWidth <= 600 && window.innerWidth > 480;
+  const isVerySmallScreen = window.innerWidth <= 480;
 
   let shoppingCart = document.getElementById("basket_wrapper");
   let content = document.getElementById("content");
-  let buttonWrapper = document.getElementById("button_wrapper");
   let headlineImg = document.getElementById("headline_img");
 
   if (isSmallScreen) {
     shoppingCart.classList.add("display_hide");
-    content.classList.add("content_full_width");
-    buttonWrapper.classList.add("button_wrapper_width");
-    headlineImg.classList.add("full_width");
+    content.classList.add("full_width");
+    headlineImg.classList.add("full_width_img");
+  } else if (isVerySmallScreen) {
+    shoppingCart.classList.add("display_hide");
+    content.classList.add("full_width");
+    headlineImg.classList.add("full_width_img");
   } else {
     shoppingCart.classList.remove("display_hide");
-    content.classList.remove("content_full_width");
-    buttonWrapper.classList.remove("button_wrapper_width");
-    headlineImg.classList.remove("full_width");
+    content.classList.remove("full_width");
+    headlineImg.classList.remove("full_width_img");
   }
 }
+
+function responsiveDishText() {
+  const isMobileScreen = window.innerWidth <= 350;
+  let shoppingCartShown = document.getElementById("basket_wrapper");
+  let dishText = document.querySelectorAll(".dish_text");
+
+  dishText.forEach((dish) => {
+    if (
+      isMobileScreen &&
+      !shoppingCartShown.classList.contains("display_hide")
+    ) {
+      dish.classList.add("display_hide");
+    } else {
+      dish.classList.remove("display_hide");
+    }
+  });
+}
+
+// Dish Size noch zusätzlich ändern
+
 
 window.addEventListener("resize", () => {
   renderBasketOrder();
   responsiveDesignAutomatic();
+  responsiveDishText();
 });
