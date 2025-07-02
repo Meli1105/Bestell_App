@@ -46,19 +46,18 @@ function getMenuLayout() {
 function getButtonUpTemplate() {
   return `<div class="button_up" onclick="scrollToTop()">
             <img src="./assets/icons/arrow_up.png" class="arrow_up" />
-            <h2>Top</h2>
           </div>`;
 }
 
 function getStarterTemplate(indexDishes) {
-  return `<div class="dish">
+  return `<div class="dish" id="dish">
               <span class="dish_header">
                 <h3 class="dish_title">${
                   dishes[0].starters[indexDishes].name
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'starters')">+</div>
               </span>
-              <a class="dish_text">${
+              <a class="dish_text" id="dish_text">${
                 dishes[0].starters[indexDishes].description
               }</a>
               <a class="price">${dishes[0].starters[indexDishes].price.toFixed(
@@ -68,14 +67,14 @@ function getStarterTemplate(indexDishes) {
 }
 
 function getMainCourseTemplate(indexDishes) {
-  return `<div class="dish">
+  return `<div class="dish" id="dish">
               <span class="dish_header">
                 <h3 class="dish_title">${
                   dishes[0].mainCourses[indexDishes].name
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'mainCourses')">+</div>
               </span>
-              <a class="dish_text">${
+              <a class="dish_text" id="dish_text">${
                 dishes[0].mainCourses[indexDishes].description
               }</a>
               <a class="price">${dishes[0].mainCourses[
@@ -85,14 +84,14 @@ function getMainCourseTemplate(indexDishes) {
 }
 
 function getDessertTemplate(indexDishes) {
-  return `<div class="dish">
+  return `<div class="dish" id="dish">
               <span class="dish_header">
                 <h3 class="dish_title">${
                   dishes[0].desserts[indexDishes].name
                 }</h3>
                 <div class="add_button" onclick="addToBasket(${indexDishes}, 'desserts')">+</div>
               </span>
-              <a class="dish_text">${
+              <a class="dish_text" id="dish_text">${
                 dishes[0].desserts[indexDishes].description
               }</a>
               <a class="price">${dishes[0].desserts[indexDishes].price.toFixed(
