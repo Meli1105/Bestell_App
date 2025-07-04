@@ -13,7 +13,8 @@ function init() {
     calcOrder();
   }
   responsiveDesignAutomatic();
-  responsiveDishText();
+  responsiveDish();
+  windowHeight();
 }
 
 function renderMenu() {
@@ -61,7 +62,7 @@ function renderBasketLayout() {
 
   basketRef.innerHTML = getBasketLayout();
 
-  responsiveDishText();
+  responsiveDish();
 }
 
 function renderBasketOrder() {
@@ -163,7 +164,7 @@ function toggleShoppingCart() {
   let shoppingCart = document.getElementById("basket_wrapper");
   shoppingCart.classList.toggle("display_hide");
   toggleContentWidth();
-  responsiveDishText();
+  responsiveDish();
 }
 
 function toggleContentWidth() {
@@ -174,33 +175,46 @@ function toggleContentWidth() {
   headlineImg.classList.toggle("full_width_img");
 }
 
+let currentScreenSize = getScreenCategory();
+
+function getScreenCategory() {
+  if (window.innerWidth <= 480) return "verySmall";
+  if (window.innerWidth <= 600) return "small";
+  return "large";
+}
+
 function responsiveDesignAutomatic() {
-  const isSmallScreen = window.innerWidth <= 600 && window.innerWidth > 480;
-  const isVerySmallScreen = window.innerWidth <= 480;
+  const newScreenSize = getScreenCategory();
 
-  let shoppingCart = document.getElementById("basket_wrapper");
-  let content = document.getElementById("content");
-  let headlineImg = document.getElementById("headline_img");
+  if (newScreenSize !== currentScreenSize) {
+    let shoppingCart = document.getElementById("basket_wrapper");
+    let content = document.getElementById("content");
+    let headlineImg = document.getElementById("headline_img");
 
-  if (isSmallScreen) {
-    shoppingCart.classList.add("display_hide");
-    content.classList.add("full_width");
-    headlineImg.classList.add("full_width_img");
-  } else if (isVerySmallScreen) {
-    shoppingCart.classList.add("display_hide");
-    content.classList.add("full_width");
-    headlineImg.classList.add("full_width_img");
-  } else {
-    shoppingCart.classList.remove("display_hide");
     content.classList.remove("full_width");
     headlineImg.classList.remove("full_width_img");
+
+    if (newScreenSize === "verySmall") {
+      shoppingCart.classList.add("display_hide");
+      content.classList.add("full_width");
+      headlineImg.classList.add("full_width_img");
+    } else if (newScreenSize === "small") {
+      shoppingCart.classList.add("display_hide");
+      content.classList.add("full_width");
+      headlineImg.classList.add("full_width_img");
+    } else {
+      shoppingCart.classList.remove("display_hide");
+      content.classList.remove("full_width");
+      headlineImg.classList.remove("full_width_img");
+    }
   }
 }
 
-function responsiveDishText() {
-  const isMobileScreen = window.innerWidth <= 350;
+function responsiveDish() {
+  const isMobileScreen = window.innerWidth <= 375;
   let shoppingCartShown = document.getElementById("basket_wrapper");
   let dishText = document.querySelectorAll(".dish_text");
+  let dishSize = document.querySelectorAll(".dish");
 
   dishText.forEach((dish) => {
     if (
@@ -212,13 +226,27 @@ function responsiveDishText() {
       dish.classList.remove("display_hide");
     }
   });
+
+  dishSize.forEach((dish) => {
+    if (
+      isMobileScreen &&
+      !shoppingCartShown.classList.contains("display_hide")
+    ) {
+      dish.classList.add("smaller_dish");
+    } else {
+      dish.classList.remove("smaller_dish");
+    }
+  });
 }
 
-// Dish Size noch zusätzlich ändern
-
+function windowHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
 
 window.addEventListener("resize", () => {
   renderBasketOrder();
   responsiveDesignAutomatic();
-  responsiveDishText();
+  responsiveDish();
+  windowHeight();
 });
