@@ -114,6 +114,9 @@
   h1 {
     font-size: 24px;
   }
+  footer {
+    height: 64px;
+  }
 }
 
 @media (max-width: 600px) {
