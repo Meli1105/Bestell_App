@@ -214,5 +214,9 @@
 }
 
 .full_width {
-  width: calc(100% - 74px);
+  width: calc(100% - 74px) !important;
+}
+
+.margin_top_48 {
+  margin-top: 48px;
 }
