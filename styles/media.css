@@ -2,7 +2,7 @@
   .dish {
     height: calc(var(--vh) * 13.5);
   }
-  .headline_img {
+  .headline_img_container {
     height: 20vh;
   }
   .menu_img {
@@ -87,7 +87,7 @@
   .logo_area {
     height: 8vh;
   }
-  .headline_img {
+  .headline_img_container {
     height: 20vh;
   }
   .menu_img {
@@ -154,6 +154,10 @@
   }
   footer {
     font-size: 8px;
+  }
+  .logo_div {
+    width: 64px;
+    height: 64px;
   }
 }
 

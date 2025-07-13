@@ -6,6 +6,7 @@ let orderList = {
 };
 
 function init() {
+  windowHeight();
   renderMenu();
   renderBasketLayout();
   getFromLocalStorage();
@@ -14,7 +15,6 @@ function init() {
   }
   responsiveDesignAutomatic();
   responsiveDish();
-  windowHeight();
 }
 
 function renderMenu() {
@@ -243,10 +243,14 @@ function windowHeight() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
+let lastHeight = window.innerHeight;
 
 window.addEventListener("resize", () => {
   renderBasketOrder();
   responsiveDesignAutomatic();
   responsiveDish();
-  windowHeight();
+  if (window.innerHeight !== lastHeight) {
+    lastHeight = window.innerHeight;
+    windowHeight();
+  }
 });
