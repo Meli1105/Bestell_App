@@ -2,17 +2,21 @@ let subtotal = 0;
 let delivery = 0;
 let total = 0;
 
+function updateBasket() {
+  saveToLocalStorage();
+  calcOrder();
+}
+
 function addToBasket(indexDishes, category) {
   let orderedDish = dishes[0][category][indexDishes];
+  let existingDishIndex = orderList.dishes.findIndex(
+    (dish) => dish === orderedDish.name
+  );
 
-  if (
-    orderList.dishes.findIndex((dish) => dish === orderedDish.name) !== -1 &&
-    orderList.amounts[indexDishes] < 20
-  ) {
-    orderList.amounts[orderList.dishes.indexOf(orderedDish.name)] += 1; // increase the amount
-    orderList.calcPrice[orderList.dishes.indexOf(orderedDish.name)] +=
-      orderedDish.price; // increase the price
-  } else if ((orderList.amounts[indexDishes] === 20)) {
+  if (existingDishIndex !== -1 && orderList.amounts[existingDishIndex] < 20) {
+    orderList.amounts[existingDishIndex] += 1; // increase the amount
+    orderList.calcPrice[existingDishIndex] += orderedDish.price; // increase the price
+  } else if (orderList.amounts[existingDishIndex] === 20) {
     toggleOverlay(indexDishes);
   } else {
     orderList.dishes.push(orderedDish.name);
@@ -20,19 +24,17 @@ function addToBasket(indexDishes, category) {
     orderList.prices.push(orderedDish.price);
     orderList.calcPrice.push(orderedDish.price);
   }
-  calcOrder();
-  renderBasketOrder();
-  saveToLocalStorage();
+  updateBasket();
 }
 
 function decreaseAmount(indexOrder) {
   if (orderList.amounts[indexOrder] > 1) {
     orderList.amounts[indexOrder] -= 1;
     orderList.calcPrice[indexOrder] -= orderList.prices[indexOrder];
+    updateBasket();
+  } else if (orderList.amounts[indexOrder] === 1) {
+    removeFromBasket(indexOrder);
   }
-  calcOrder();
-  renderBasketOrder();
-  saveToLocalStorage();
 }
 
 function increaseAmount(indexOrder) {
@@ -41,9 +43,7 @@ function increaseAmount(indexOrder) {
     orderList.amounts[indexOrder] += 1;
     orderList.calcPrice[indexOrder] += orderList.prices[indexOrder];
   }
-  calcOrder();
-  renderBasketOrder();
-  saveToLocalStorage();
+  updateBasket();
 }
 
 function removeFromBasket(indexOrder) {
@@ -54,10 +54,8 @@ function removeFromBasket(indexOrder) {
 
   if (orderList.dishes.length === 0) {
     calcOrder();
-    renderBasketLayout();
   } else {
     calcOrder();
-    renderBasketOrder();
   }
   saveToLocalStorage();
 }

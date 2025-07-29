@@ -44,7 +44,6 @@
 
 .menu_img {
   height: 15vh;
-  width: 100%;
   object-fit: cover;
 }
 
@@ -53,7 +52,7 @@
   margin-bottom: 24px;
   padding-left: 12px;
   padding-bottom: 12px;
-  height: calc(var(--vh) * 16);
+  height: calc(var(--vh) * 18);
   border: 1px solid;
   border-color: rgba(255, 128, 0, 0.678);
   box-sizing: border-box;
@@ -205,18 +204,27 @@
   color: white;
 }
 
-.full_width_img {
-  width: calc(100% + 74px);
-}
-
-.smaller_dish {
-  height: calc(var(--vh) * 19) !important;
+.dish_margin_right {
+  margin-right: 32px;
 }
 
 .full_width {
-  width: calc(100% - 74px) !important;
+  width: 100% !important;
 }
 
 .margin_top_48 {
   margin-top: 48px;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 80vh;
+}
+
+.img_width {
+  width: 100%;
+}
+
+/* .smaller_dish {
+  height: calc(var(--vh) * 19) !important;
+} */

@@ -1,54 +1,47 @@
 function getMenuLayout() {
   return `
           <div class="headline_img_container" id="headline_img">
-            <img class="headline_img" src="./assets/img/tapas.jpg"/>
-            <div class="logo_div"><img class="headline_logo" src="./assets/icons/prawn.png"></div>
+              <img class="headline_img img_width" src="./assets/img/tapas.jpg"/>
+              <div class="logo_div"><img class="headline_logo" src="./assets/icons/prawn.png"></div>
           </div>
           <div class="headline margin_top_48">
             <h1>Tapas Paradise</h1>
             <h3>Review (3/5 stars)</h3>
           </div>
 
-          <div class="menu_bar">
-            <span class="menu_item">
-              <img class="arrow" src="./assets/icons/right-arrow.png" />
-              <a class="menu_text" href="#starters_img">Starters</a>
-            </span>
-
-            <span class="menu_item">
-              <img class="arrow" src="./assets/icons/right-arrow.png" />
-              <a class="menu_text" href="#main_courses_img">Main Course</a>
-            </span>
-
-            <span class="menu_item">
-              <img class="arrow" src="./assets/icons/right-arrow.png" />
-              <a class="menu_text" href="#desserts_img">Desserts</a>
-            </span>
+          <div class="menu_bar img_width">
+          ${getMenuItemTemplate("Starters", "starters_img")}
+          ${getMenuItemTemplate("Main Courses", "main_courses_img")}
+          ${getMenuItemTemplate("Desserts", "desserts_img")}
           </div>
 
-          <img class="menu_img" id="starters_img" src="./assets/img/bruschetta.jpg" />
-          <div class="headline">
-            <h2>Starters</h2>
-          </div>
-          <div id="starters"></div>
-
-          <img class="menu_img" id="main_courses_img" src="./assets/img/spaghetti-1392266_1920.jpg" />
-          <div class="headline">
-            <h2>Main Courses</h2>
-          </div>
-          <div id="main_courses"></div>
-
-          <img class="menu_img" id="desserts_img" src="./assets/img/creme-brulee-3490882_1920.jpg" />
-          <div class="headline">
-            <h2>Desserts</h2>
-          </div>
-          <div id="desserts"></div>
+          ${getMenuListTemplate("Starters", "starters_img", "starters")}
+          ${getMenuListTemplate("Main Courses", "main_courses_img", "main_courses")}
+          ${getMenuListTemplate("Desserts", "desserts_img", "desserts")}
     `;
+}
+
+function getMenuItemTemplate(category, imgLink) {
+  return `
+        <span class="menu_item">
+          <img class="arrow" src="./assets/icons/right-arrow.png" />
+          <a class="menu_text" href="#${imgLink}">${category}</a>
+        </span>`;
+}
+
+function getMenuListTemplate(category, imgLink, divId) {
+  return `
+      <img class="menu_img img_width" id="${imgLink}" src="./assets/img/${divId}.jpg" />
+        <div class="headline">
+            <h2>${category}</h2>
+        </div>
+        <div id="${divId}"></div>`;
 }
 
 function getButtonUpTemplate() {
   return `<div class="button_up" onclick="scrollToTop()">
-            <img src="./assets/icons/arrow_up.png" class="arrow_up" />
+            <img src="./assets/icons/arrow_up_transparency.png" class="arrow_up default" />
+            <img src="./assets/icons/arrow_up.png" class="arrow_up hover" />
           </div>`;
 }
 
@@ -141,35 +134,7 @@ function getBasketLayout() {
 }
 
 function getOrderItemTemplate(indexOrder) {
-  const isSmallScreen = window.innerWidth <= 600;
-
-  if (isSmallScreen) {
-    return `
-    <table>
-        <th class="table_dish" colspan="6">
-            ${orderList.dishes[indexOrder]}
-        </th>
-        <tr>
-            <td class="operator" id="minus${indexOrder}" onclick="decreaseAmount(${indexOrder})">-</td>
-            <td class="amount" data-original="1">${
-              orderList.amounts[indexOrder]
-            }</td>
-            <td class="padding_r_16">x</td>
-            <td class="operator" id="plus${indexOrder}" onclick="increaseAmount(${indexOrder})">+</td>
-        </tr>
-        <tr>
-            <td class="amount">${orderList.calcPrice[indexOrder].toFixed(
-              2
-            )}</td>
-            <td class="padding_r_16">€</td>
-            <td class="trash_column" colspan="2">
-                <img class="trash" onclick="removeFromBasket(${indexOrder})" src="./assets/icons/disposal.png" />
-            </td>
-        </tr>
-    </table>
-    `;
-  } else {
-    return `
+  return `
     <table>
         <th class="table_dish" colspan="6">
             ${orderList.dishes[indexOrder]}
@@ -191,5 +156,60 @@ function getOrderItemTemplate(indexOrder) {
         </tr>
     </table>
     `;
-  }
 }
+
+// Code kept as example for changing layout depending on screen size
+// function getOrderItemTemplate(indexOrder) {
+//   const isSmallScreen = window.innerWidth <= 600;
+
+//   if (isSmallScreen) {
+//     return `
+//     <table>
+//         <th class="table_dish" colspan="6">
+//             ${orderList.dishes[indexOrder]}
+//         </th>
+//         <tr>
+//             <td class="operator" id="minus${indexOrder}" onclick="decreaseAmount(${indexOrder})">-</td>
+//             <td class="amount" data-original="1">${
+//               orderList.amounts[indexOrder]
+//             }</td>
+//             <td class="padding_r_16">x</td>
+//             <td class="operator" id="plus${indexOrder}" onclick="increaseAmount(${indexOrder})">+</td>
+//         </tr>
+//         <tr>
+//             <td class="amount">${orderList.calcPrice[indexOrder].toFixed(
+//               2
+//             )}</td>
+//             <td class="padding_r_16">€</td>
+//             <td class="trash_column" colspan="2">
+//                 <img class="trash" onclick="removeFromBasket(${indexOrder})" src="./assets/icons/disposal.png" />
+//             </td>
+//         </tr>
+//     </table>
+//     `;
+//   } else {
+//     return `
+//     <table>
+//         <th class="table_dish" colspan="6">
+//             ${orderList.dishes[indexOrder]}
+//         </th>
+//         <tr>
+//             <td class="operator" id="minus${indexOrder}" onclick="decreaseAmount(${indexOrder})">-</td>
+//             <td class="amount" data-original="1">${
+//               orderList.amounts[indexOrder]
+//             }</td>
+//             <td class="padding_r_16">x</td>
+//             <td class="operator" id="plus${indexOrder}" onclick="increaseAmount(${indexOrder})">+</td>
+//             <td class="amount">${orderList.calcPrice[indexOrder].toFixed(
+//               2
+//             )}</td>
+//             <td class="padding_r_16">€</td>
+//             <td class="trash_column">
+//                 <img class="trash" onclick="removeFromBasket(${indexOrder})" src="./assets/icons/disposal.png" />
+//             </td>
+//         </tr>
+//     </table>
+//     `;
+//   }
+// }
+
