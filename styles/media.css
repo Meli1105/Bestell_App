@@ -3,22 +3,22 @@
     height: calc(var(--vh) * 13.5);
   }
   .headline_img_container {
-    height: 20vh;
+    height: calc(var(--vh) * 20);
   }
   .menu_img {
-    height: 12vh;
+    height: calc(var(--vh) * 12);
   }
   .logo_area {
-    height: 8vh;
+    height: calc(var(--vh) * 3);
   }
   footer {
     height: 80px;
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1100px) {
   .dish {
-    height: calc(var(--vh) * 18);
+    height: calc(var(--vh) * 19);
   }
 }
 
@@ -26,16 +26,14 @@
   .headline {
     margin-left: 24px;
   }
-
-  .dish {
-    margin-left: 24px;
-    height: calc(var(--vh) * 19);
+  .dish_margin_right {
+    margin-right: 24px;
   }
   .menu_bar {
     padding-left: 24px;
+    width: calc(100% - 24px) !important;
     gap: 8px 24px;
     padding-top: 12px;
-    width: calc(100% - 24px);
   }
   .menu_item {
     height: 80%;
@@ -55,13 +53,6 @@
   }
 }
 
-@media (max-width: 820px) {
-  .menu_bar {
-    padding-right: 12px;
-    width: calc(100% - 36px);
-  }
-}
-
 @media (max-width: 804px) {
   .menu_bar {
     height: 8vh;
@@ -70,22 +61,22 @@
     height: 40%;
   }
   .dish {
-    height: calc(var(--vh) * 20);
+    height: calc(var(--vh) * 20.5);
+  }
+}
+
+@media (max-width: 750px) {
+  .dish {
+    height: calc(var(--vh) * 21);
   }
 }
 
 @media (max-width: 671px) {
-  .dish {
-    height: calc(var(--vh) * 21);
-  }
   .menu_bar {
     height: 12vh;
   }
   .menu_item {
     height: 27%;
-  }
-  .logo_area {
-    height: 8vh;
   }
   .headline_img_container {
     height: 20vh;
@@ -121,10 +112,21 @@
 
 @media (max-width: 600px) {
   .basket_wrapper {
-    width: 200px;
+    width: 100%;
+    height: calc(var(--vh) * 95);
+    z-index: 50;
+    background-color: white;
+  }
+  .order_list {
+    margin-left: 48px;
+    margin-right: 48px;
   }
   .content {
-    width: calc(100% - 218px);
+    width: 100%;
+  }
+  .dish {
+    margin-right: 24px;
+    height: calc(var(--vh) * 20);
   }
   .trash_column {
     text-align: right;
@@ -152,9 +154,6 @@
 }
 
 @media (max-width: 540px) {
-  .dish {
-    height: calc(var(--vh) * 23);
-  }
   footer {
     font-size: 8px;
   }
@@ -170,12 +169,6 @@
   }
   td {
     padding-bottom: 6px;
-  }
-  .basket_wrapper {
-    width: 150px;
-  }
-  .content {
-    width: calc(100% - 168px);
   }
   .trash_column {
     text-align: right;
@@ -220,7 +213,7 @@
   }
   .menu_bar {
     padding-left: 14px;
-    width: calc(100% - 26px);
+    width: calc(100% - 14px) !important;
   }
   .menu_item {
     height: 25%;
@@ -230,5 +223,14 @@
   }
   .dish {
     margin-left: 14px;
+    margin-right: 14px;
+    height: calc(var(--vh) * 21);
+  }
+  .dish_margin_right {
+    margin-right: 14px;
+  }
+  .order_list {
+    margin-left: 36px;
+    margin-right: 36px;
   }
 }
